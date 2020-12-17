@@ -21,8 +21,9 @@ a {
   list-style-type: none;
   display: inline;
 }
-a:hover {
-  color: rgba(145, 145, 144, 0.329);
+.list-item{ background-color: rgba(129, 112, 35, 0.89); padding: 20px;box-shadow: -7px 6px rgba(245, 245, 245, 0.336);}
+.list-item:hover { background:  rgba(110, 22, 14, 0.774); color: white}
+a:hover { color: rgba(136, 117, 33, 0.952);
 }
 .nav-bar {
   word-spacing: 50px;
@@ -31,21 +32,21 @@ a:hover {
   padding-right: 40px;
 }
 .box {
-  box-shadow: -10px 9px #2508088e;
+  box-shadow: -10px 9px rgba(245, 245, 245, 0.336);
   color: white;
   background-color: rgba(110, 22, 14, 0.774);
   float: left;
-  width: 14%;
-  height: 300px;
-  padding: 30px;
+  width: 20%;
+  height: auto;
+  padding:30px;
   position: fixed;
   text-align: center;
   margin-left: 50px;
 }
 .profile-picture {
-  width: 90px;
+  width: 120px;
   border-radius: 50%;
-  box-shadow: -5px 6px 5px rgba(63, 10, 10, 0.856);
+  box-shadow: -5px 6px 5px rgba(63, 10, 10, 0.514);
 }
 .about {
   background-color: rgba(255, 255, 255, 0.849);
@@ -76,20 +77,30 @@ li {
   color: rgb(88, 88, 6);
   background-color: rgba(255, 255, 255, 0.849);
   width: 63%;
-  height: auto;
+  height: 18%;
   padding: 60px;
   margin-right: 50px;
   margin-top: 30px;
+  margin-bottom: 80px;
 }
+.mail {color: rgb(88, 88, 6); text-decoration: underline;}
+.mail:hover {background:  rgba(110, 22, 14, 0.774); color: white;}
 .wireframe {
   width: 30%;
   padding: 10px;
 }
+.wireframe:hover  {filter: brightness(50%);}
 .appwireframe {
   width: 30%;
   padding: 10px;
 }
+.appwireframe:hover  {filter: brightness(50%);}
+
 .low-fi {
   width: 30%;
   padding: 10px;
 }
+.low-fi:hover  {filter: brightness(50%);}
+.address{float: left; width:50%}
+.e-mail {float:right; width: 50%; }
+
