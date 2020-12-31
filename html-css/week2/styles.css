@@ -1,0 +1,112 @@
+body {
+	background-size: contain;
+	height: auto;
+	font-family: "Montserrat";
+	height: 100%;
+}
+
+header {
+	background-color: rgb(236, 241, 245);
+	height: 15%;
+	width: 100%;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.nav-bar li {
+	list-style-type: none;
+	display: inline;
+	margin-left: 20px;
+}
+
+.nav-bar a {
+	text-decoration: none;
+	color: black;
+}
+
+.banner {
+	height: auto%;
+	width: 100%;
+}
+
+.image {
+	width: 100%;
+}
+
+.grid {
+	height: auto%;
+	padding: 30px;
+	overflow: hidden;
+}
+
+.container-industry {
+	float: left;
+	width: 30%;
+	padding: 60px;
+	position: absolute;
+}
+
+.container-practical {
+	float: right;
+	width: 40%;
+	padding: 60px;
+	position: relative;
+}
+
+.container-logos {
+	width: 50%;
+	float: right;
+	padding: 30px;
+	overflow: hidden;
+}
+
+.logo-grid {
+	display: grid;
+	justify-items: left;
+	margin: 10px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.logo-grid img {
+	width: 30%;
+	height: auto;
+	padding: 30px;
+}
+
+footer {
+	color: white;
+	background-color: rgba(125, 110, 160, 0.596);
+	height: 50%;
+	width: 100%;
+	overflow: hidden;
+}
+
+footer li {
+	list-style-type: none;
+	padding: 10px;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+}
+
+.find-ul {
+	width: 20%;
+	float: left;
+}
+
+.about-ul {
+	width: 20%;
+	float: left;
+}
+
+.archives-ul {
+	width: 20%;
+	float: right;
+}
+
+.nav-ul {
+	width: 20%;
+	float: right;
+}
