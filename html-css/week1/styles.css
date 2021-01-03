@@ -87,18 +87,18 @@ li {
 .mail:hover {background:  rgba(110, 22, 14, 0.774); color: white;}
 .wireframe {
   width: 30%;
-  padding: 5px;
+  padding: 10px;
 }
 .wireframe:hover  {filter: brightness(50%);}
 .appwireframe {
   width: 30%;
-  padding: 5px;
+  padding: 10px;
 }
 .appwireframe:hover  {filter: brightness(50%);}
 
 .low-fi {
   width: 30%;
-  padding: 5px;
+  padding: 10px;
 }
 .low-fi:hover  {filter: brightness(50%);}
 .address{float: left; width:50%}
