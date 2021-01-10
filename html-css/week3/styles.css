@@ -1,0 +1,84 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 21px;
+}
+header {
+  color: rgb(85, 47, 47);
+  height: auto;
+  width: 100%;
+}
+.logo {
+  width: 6em;
+  margin-left: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.buttons-header {
+  float: right;
+  margin-top: 15px;
+}
+
+#buttons-header {
+  font-size: 40px;
+  float: right;
+  margin-right: 50px;
+  word-spacing: 50px;
+  font-size: 30px;
+  color: rgb(194, 165, 37);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.intro {
+  background-color: #584e12e0;
+  background-image: url(http://downloads.inspirationhut.net/wp-content/uploads/2014/08/slide36-805x474.jpg);
+  color: white;
+  padding: 50px;
+  width: 100%;
+  overflow: hidden;
+}
+.intro background-image {
+  width: 100%;
+}
+.form {
+  width: 100%;
+  padding: 30px;
+  line-height: 50px;
+}
+label {
+  font-size: large;
+}
+input {
+}
+
+.profile-input {
+  width: 100%;
+  height: 100px;
+  align-self: flex-start;
+}
+select {
+  height: 20px;
+  width: 200px;
+  border-radius: 5px;
+}
+.next-step-bttn {
+  margin-left: 50%;
+  margin-bottom: 50px;
+  border: 0;
+  -webkit-appearance: none;
+  padding: 10px;
+  color: white;
+  background-color: rgb(194, 165, 37);
+  font-size: larger;
+}
+
+img {
+  margin: 20px;
+}
+.select {
+  word-spacing: 20px;
+}
