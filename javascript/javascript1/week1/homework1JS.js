@@ -1,7 +1,7 @@
 /*Age-ify 
 (A future age calculator)*/
 
-var yearOfBirth = 1995;
+const yearOfBirth = 1995;
 var yearFuture = 2033;
 var age = yearFuture - yearOfBirth ;
 
