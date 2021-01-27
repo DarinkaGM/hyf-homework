@@ -12,7 +12,8 @@ console.log ("You will be " + age + " in" + yearFuture + ".");
 (A dog age calculator)*/
 
 
-var dogYearOfBirth = 2018;
+const humanYearOfBirth= 2018;
+const humanYearFuture=2033
 var dogYearFuture = 2023;
 var humanAge = humanYearFuture - humanYearOfBirth;
 var dogYear = humanAge * 7;
