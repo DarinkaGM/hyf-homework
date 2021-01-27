@@ -14,7 +14,7 @@ console.log ("You will be " + age + " in" + yearFuture + ".");
 
 var dogYearOfBirth = 2018;
 var dogYearFuture = 2023;
-var humanAge = dogYearFuture - dogYearOfBirth;
+var humanAge = humanYearFuture - humanYearOfBirth;
 var dogYear = humanAge * 7;
 var shouldShowResultInDogYears = true;
 
