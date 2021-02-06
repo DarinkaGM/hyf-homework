@@ -73,7 +73,7 @@ const names = [
     const notes = [];
   
     function saveNote(content, id) {
-      var addTag = {"content": content, "id": id};
+      var newNote = {"content": content, "id": id};
      notes.push(addTag);
     }
     
