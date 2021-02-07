@@ -53,7 +53,7 @@ function addStudentToClass(studentName) {
     } 
 }
 function getNumberOfStudents() {
-   return "There are" + class07Students.length + "students in the class."
+   class07Students.length
 }
 addStudentToClass ("Dronning Margrethe")
 addStudentToClass ("Alice")
