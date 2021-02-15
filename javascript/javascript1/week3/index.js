@@ -54,6 +54,7 @@ const seriesDurations = [{
         title: "The Handmaid's tale",
         totalInMinutes: 1800,
     },
+<<<<<<< HEAD
 ];
 
 var life = (42048000);
@@ -92,3 +93,47 @@ function getNote(id) {
 }
 const thirdNote = getNote(3);
 console.log(thirdNote);
+=======
+  ];
+  
+  var life = (42048000);
+  
+  function logOutSeriesText() {
+    for(let i= 0; i < seriesDurations.length; i++){
+    let percentage = (seriesDurations[i].totalInMinutes / life * 100);
+  console.log ("You've spent " + percentage + "%" + " of your life watching: " + (seriesDurations[i].title) + ".");
+  }
+  }
+  
+  logOutSeriesText()
+
+
+  
+  
+  
+  
+  
+  // NOnoN0nOYes (Note taking app)
+    const notes = [];
+  
+    function saveNote(content, id) {
+      var newNote = {"content": content, "id": id};
+     notes.push(addTag);
+    }
+    
+    saveNote("Call my brother", 1);
+    saveNote("Fix the bike", 2);
+    
+    console.log(notes);
+
+    function getNote(id) {
+        for (var i = 0; i < notes.length; i++){
+       if (id === notes[i].id) {
+         return notes[i];
+       }
+     }
+     }
+     const thirdNote = getNote(3);
+     console.log (thirdNote); 
+  
+>>>>>>> deac2ca4386713de44ec4b0c2dd7b4ac673852c2
