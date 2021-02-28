@@ -9,7 +9,13 @@ const names = [
     'Samuel',
     'katrine',
     'Tala',
-];
+
+  ];
+  
+const ahmadIndex = names.indexOf("Ahmad");
+names = names.splice(ahmadIndex,1);
+  
+  console.log (names); ];
 const nameToRemove = "Ahmad";
 
 for (let i = 0; i < names.length; i++) {
@@ -19,7 +25,6 @@ for (let i = 0; i < names.length; i++) {
 }
 
 console.log(names);
-
 
 
 //When will we be there?
@@ -54,49 +59,10 @@ const seriesDurations = [{
         title: "The Handmaid's tale",
         totalInMinutes: 1800,
     },
-<<<<<<< HEAD
+
 ];
 
-var life = (42048000);
-
-function logOutSeriesText() {
-    for (let i = 0; i < seriesDurations.length; i++) {
-        let percentage = (seriesDurations[i].totalInMinutes / life * 100);
-        console.log("You've spent " + percentage + "%" + " of your life watching: " + (seriesDurations[i].title) + ".");
-    }
-}
-
-logOutSeriesText()
-
-
-
-
-// NOnoN0nOYes (Note taking app)
-const notes = [];
-
-function saveNote(task, id) {
-    const newNote = [("Content: " + task), ("id: " + id)]
-    notes.push(newNote);
-}
-
-saveNote("Call my brother", 1);
-saveNote("Fix the bike", 2);
-
-console.log(notes);
-
-function getNote(id) {
-    for (var i = 0; i < notes.length; i++) {
-        if (id === notes[i].id) {
-            return notes[i];
-        }
-    }
-}
-const thirdNote = getNote(3);
-console.log(thirdNote);
-=======
-  ];
-  
-  var life = (42048000);
+ var lifeInMinutes = (80 * 365 * 24 * 60);
   
   function logOutSeriesText() {
     for(let i= 0; i < seriesDurations.length; i++){
@@ -108,11 +74,8 @@ console.log(thirdNote);
   logOutSeriesText()
 
 
-  
-  
-  
-  
-  
+
+
   // NOnoN0nOYes (Note taking app)
     const notes = [];
   
@@ -136,4 +99,7 @@ console.log(thirdNote);
      const thirdNote = getNote(3);
      console.log (thirdNote); 
   
->>>>>>> deac2ca4386713de44ec4b0c2dd7b4ac673852c2
+  
+  
+
+ 
