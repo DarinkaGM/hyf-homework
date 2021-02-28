@@ -53,7 +53,7 @@ names = names.splice(ahmadIndex,1);
     },
   ];
   
-  var life = (42048000);
+  var lifeInMinutes = (80 * 365 * 24 * 60);
   
   function logOutSeriesText() {
     for(let i= 0; i < seriesDurations.length; i++){
