@@ -11,7 +11,8 @@ const names = [
     'Tala',
   ];
   
-  names.splice(1, 1);
+const ahmadIndex = names.indexOf("Ahmad");
+names = names.splice(ahmadIndex,1);
   
   console.log (names); 
 
