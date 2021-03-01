@@ -1,29 +1,42 @@
 //DANSKE ORD
 
-const danishWords = ["bil", "plante", "kaffe", "bog", "ø", "planetarium"];
+let danishWords = ["bil", "plante", "kaffe", "bog", "ø", "planetarium"];
 
-function getShortestWord(danishWords){
-     let shortestWord = danishWords [0];
-     danishWords.forEach(element => {
-         if (shortestWord.length > element.length){
-             shortestWord = element;
+function getShortestWord(word){
+     const lengthOfWords = [];
+     word.forEach(word => {
+         lengthOfWords.push(word.length)
+         });
+     
+     let shortestWord= Math.min.apply(Math, lengthOfWords);
+     danishWords.forEach(word=> {
+         if (word.length == shortestWord){
+          console.log("The shortest word is: " + word);  
          }
+
+         
      });
-     return shortestWord;
 
-}; 
-console.log (getShortestWord(danishWords)); 
+     };
+getShortestWord(danishWords);
 
-function getLongestWord(danishWords){
-    let longestWord = danishWords [0];
-    danishWords.forEach(element => {
-        if (longestWord.length < element.length){
-            longestWord = element;
+function getLongestWord(word){
+    const lengthOfWords = [];
+    word.forEach(word => {
+        lengthOfWords.push(word.length)
+        });
+    
+    let longestWord= Math.max.apply(Math, lengthOfWords);
+    danishWords.forEach(word=> {
+        if (word.length == longestWord){
+         console.log("The longest word is: " + word);  
         }
+
+        
     });
-    return longestWord;
-}; 
-console.log (getLongestWord(danishWords));
+
+    };
+getLongestWord(danishWords);
 
 //
 var danishString = "Jeg har en blå bil";
