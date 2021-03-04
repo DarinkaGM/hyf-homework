@@ -1,0 +1,151 @@
+a {
+    text-decoration: none;
+    color: #F9FBFD;
+}
+a:hover {
+	background: rgba(128, 128, 128, 0.507);
+	color: white;
+}
+.nav-ul{
+    display: inline-flex;
+    float: right;
+    width: 30%;
+}
+.nav-li a {
+    padding: 20px;
+}
+nav { width: 100%;
+height: 55px;
+overflow: hidden;}
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(https://image.freepik.com/free-vector/pattern-about-shopping_1061-495.jpg);
+}
+
+input {
+    color: rgb(122, 40, 56);
+    border-radius: 5px;
+    border-color: rgba(255, 255, 255, 0);
+}
+h1{ float: left;
+margin-left: 90px;}
+body, h2 {
+    margin: 0;
+    overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    color: rgb(28, 35, 99);
+    font-weight: bold;
+
+}
+
+select {
+    font-weight: bold;
+    -webkit-appearance: none;
+    color: rgb(172, 120, 120);
+    padding: 3px;
+
+}
+
+header {
+    color: #f0f0f0e1;
+    background-color: rgb(28, 35, 99);
+    box-shadow: 0 1px 2px rgba(190, 190, 190, 0.5);
+}
+
+header .wrapper {
+    width: 800px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.938);
+    position: relative;
+}
+
+header .wrapper h1, header .wrapper h2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+header .wrapper h2 {
+    left: 125px;
+}
+
+section.table-view-control, section.products, section.cart {
+    width: 100%;
+    margin: 0 auto;
+}
+
+section.table-view-control, section.products {
+    background-color: rgba(176, 177, 207, 0.897);
+}
+
+section.table-view-control {
+    padding: 12px;
+}
+
+section.table-view-control>div, section.table-view-control .filters>div {
+    margin-bottom: 24px;
+}
+
+section.products>ul {
+    padding: 0;
+}
+
+section.products>ul>li>ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 12px 12px 12px;
+}
+
+section.products>ul>li>ul>li:first-child {
+    width: 200px;
+}
+
+section.products>ul>li:nth-child(odd) {
+    background-color: #a1a4cae7;
+}
+
+section.products li div, section.products li button {
+    margin-right: 12px;
+    width: 100px;
+}
+
+
+section.products li .name {
+    width: 200px;
+}
+
+section.cart {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    width: 250px;
+    height: 120px;
+    background-color: rgba(156, 58, 58, 0.972);
+    overflow-y: auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+section.cart ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section.cart ul>li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+}
+
+section.cart ul>li:nth-child(odd) {
+    background-color: #beb8b8;
+}
