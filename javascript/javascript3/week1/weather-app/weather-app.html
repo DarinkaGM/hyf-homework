@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather-app.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <section>
+        <div class="content">
+            <div id="container-input">
+                <input type="text" id="city-input" placeholder="Enter city" required>
+                <button type="button" id="bttn">+</button>
+            </div>
+            <p id="errorMessage" hidden="true"></p>
+            <h2 id="city-name"></h2>
+            <h1 id="temperature-in-c"></h1>
+            <img src="" id="icon" hidden="true">
+            <h3 id="wind"></h3>
+            <h3 id="humidity"></h3>
+            <h3 id="sunrise"></h3>
+            <h3 id="sunset"></h3>
+            <h3 id="loader" hidden="true"></h3>
+
+        </div>
+    </section>
+    <script src="weatherApp.js"></script>
+
+</body>
+
+</html>
