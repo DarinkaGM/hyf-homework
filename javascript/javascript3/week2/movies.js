@@ -14,3 +14,5 @@
         const lowRatedMovies2000 = lowRatedMovies.filter(movie => movie.year >= 2000);
         const badMovies2000 = lowRatedMovies2000.map(movie => movie.title);
         console.log(badMovies2000);
+    });
+    

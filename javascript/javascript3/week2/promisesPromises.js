@@ -1,23 +1,14 @@
 const myAsyncPromise = (resolveAfter) => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            if (resolveAfter) {
-                resolve ('Success');
-            }
-            else {
-                reject ('error');
-            }
+    return new Promise ((resolve) => {
+        setTimeout(() => { resolve()
         }, resolveAfter * 1000);
     })
  
 };
 myAsyncPromise(7)
-    .then(response => {
-        console.log("I am called asynchronously!");
+    .then(response => { console.log("I am called asynchronously!");
     })
-    .catch(error => {
-        console.log("I found and error.");
-
+    .catch(error => { console.log("I found and error.");
     });
 
     async function asyncCall() {
