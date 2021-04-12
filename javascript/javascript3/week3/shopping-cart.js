@@ -27,12 +27,12 @@ class ShoppingCart {
     }
     renderProducts() {
         this.products.forEach((product) => {
-            const li = document.createElement('li');
-            const liPrice = document.createElement("li");
-            li.textContent = `${product.name}`;
-            liPrice.textContent = `${product.price}`;
-            productList.appendChild(li);
-            price.appendChild(liPrice);
+            const listOfProducts = document.createElement('li');
+            const listPrices = document.createElement("li");
+            listOfProducts.textContent = `${product.name}`;
+            listPrices.textContent = `${product.price}`;
+            productList.appendChild(listOfProducts);
+            price.appendChild(listPrices);
         })
         return products;
     }

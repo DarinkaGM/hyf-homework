@@ -36,3 +36,14 @@ setInterval(() => {
     const c1 = new Circle(x, y, r, startAngle, endAngle, fillColor);
     c1.draw()
 },100);
+
+canvas.addEventListener('mousemove',function myFunction(e) {
+    function radius() {
+        const r = Math.floor(Math.random() * 10);
+        return r
+    }
+    let x = e.clientX;
+    let y = e.clientY;
+    const c1 = new Circle(x, y, radius(), 0, 2 * Math.PI)
+    c1.draw()
+  })
