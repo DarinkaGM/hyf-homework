@@ -1,0 +1,23 @@
+CREATE TABLE `Host` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `Name` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`id`));
+  CREATE TABLE `Genre` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `Genre` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`));
+  CREATE TABLE `Episodes` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `minutes` VARCHAR(255) NOT NULL,
+  `date` DATETIME NOT NULL,
+  `topic` VARCHAR(255) NOT NULL,
+  `times_played` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`));
+  CREATE TABLE `Podcast` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `suscribers` VARCHAR(255) NOT NULL,
+  `daily_listeners` VARCHAR(255) NOT NULL,
+  `genre_id` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`));
