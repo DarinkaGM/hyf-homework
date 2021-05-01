@@ -6,24 +6,22 @@ CREATE TABLE `Meal` (
   `title` VARCHAR(255) NOT NULL,
   `description` TEXT(500) NULL,
   `location` VARCHAR(255) NOT NULL,
-  `meal_time` DATETIME NOT NULL,
-  `max_resrvations` INT NOT NULL,
+  `when` DATETIME NOT NULL,
+  `max_reservations` INT NOT NULL,
   `price` DECIMAL(6,2) NOT NULL,
   `created_date` DATETIME NOT NULL,
-  PRIMARY KEY (`id`));
+  PRIMARY KEY (`id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
   
   CREATE TABLE `Reservation`(
  `id` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
  `number_of_guests` int NOT NULL,
- `meal_id` int NOT NULL,
- `created_date` DATETIME NOT NULL default NOW
-(),
- CONSTRAINT `fk_meal_reservation` FOREIGN KEY
-(`meal_id`) REFERENCES `Meal`
-(`id`) ON
-DELETE CASCADE ON
-UPDATE CASCADE
-) 
+ `meal_id` int UNSIGNED NOT NULL,
+ `created_date` DATETIME NOT NULL default NOW(),
+ contact_phonenumber VARCHAR(255) NOT NULL,
+ contact_name VARCHAR(255) NOT NULL,
+ contact_email VARCHAR(255) UNIQUE NOT NULL,
+ CONSTRAINT `fk_meal_reservation` FOREIGN KEY (`meal_id`) REFERENCES `Meal`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+)  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `Review`
 (
@@ -32,36 +30,32 @@ CREATE TABLE `Review`
  `title` VARCHAR
 (255) NOT NULL,
  `description` text NULL DEFAULT NULL,
- `meal_id` int
- NOT NULL,
+ `meal_id` int UNSIGNED NOT NULL,
  `stars` int NOT NULL,
- `created_date` DATETIME NOT NULL default NOW
-(),
+ `created_date` DATETIME NOT NULL default NOW(),
  CONSTRAINT `fk_meal_review` FOREIGN KEY
 (`meal_id`) REFERENCES `Meal`
 (`id`) ON
 DELETE CASCADE ON
 UPDATE CASCADE
- ) 
+ )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Meal
-insert into Meal
-  (id, title, description, location, meal_time, max_reservations, price, created_date)
+SELECT *
+FROM Meal;
+insert into Meal (title, description, location, when, max_reservations, price, created_date)
 values
-  (1,'Tacos', 'Beef tacos', 'Mexican street 37', '2021-04-21  19:00:00', 10, 10.50, '2021-04-21');
-insert into Meal
-  (id, title, description, location, meal_time, max_reservations, price, created_date)
-values
-  (2,'Sushi', 'Salmon sushi', 'Strandvejen 70', '2021-04-19  18:30:00', 10, 40.75, '2021-04-19');
+  ('Tacos', 'Beef tacos', 'Mexican street 37', '2021-04-21  19:00:00', 10, 10.50, '2021-04-21'),
+  ('Sushi', 'Salmon sushi', 'Strandvejen 70', '2021-04-19  18:30:00', 10, 40.75, '2021-04-19');
 
 
 -- Reservation
 insert into Reservation
-  (id, number_of_guests,meal_id,created_date)
-values(1, 2, 1, '2021-04-21');
+  (number_of_guests, meal_id, created_date, contact_phonenumber, contact_name , contact_email)
+values( 2, 1, '2021-04-21', 43654009, Anna B, annab@gmail.com);
 insert into Reservation
-  (id, number_of_guests,meal_id,created_date)
-values(1, 4, 2, '2021-04-19');
+  ( number_of_guests,meal_id,created_date, contact_phonenumber, contact_name , contact_email)
+values( 4, 2, '2021-04-21', 32653425, Stephany E, stephanye@gmail.com);
 
 
 -- Review
@@ -82,9 +76,9 @@ FROM Meal;
 
 -- 2)Add a new meal
 insert into Meal
-  (id, title, description, location, meal_time, max_reservations, price, created_date)
+  ( title, description, location, when, max_reservations, price, created_date)
 values
-  (3, 'Hamburger', 'Veggie hamburger', 'Osterbrogade 54', '2025-24-04 20:29:13', 15, '15.50', '2025-24-04');
+  ( 'Hamburger', 'Veggie hamburger', 'Osterbrogade 54', '2025-24-04 20:29:13', 15, '15.50', '2025-24-04');
 
 -- 3)Get a meal with any id
 SELECT *
@@ -107,8 +101,8 @@ FROM Reservation;
 
 -- 2)Add a new reservation
 insert into Reservation
-  (id, number_of_guests,meal_id,created_date)
-values(3, 6, 5, '2020-05-30');
+  ( number_of_guests,meal_id,created_date)
+values( 6, 5, '2020-05-30');
 
 -- 3)Get a reservation with any id, fx 1
 SELECT *
@@ -131,9 +125,9 @@ FROM Review;
 
 -- 2)Add a new review
 insert into Review
-  (id, title, description, meal_id, stars,created_date)
+  ( title, description, meal_id, stars,created_date)
 values
-  (3, 'Hamburger review', 'The best veggie burger Ive had so far', 3, 5, '2021-04-28');
+  ( 'Hamburger review', 'The best veggie burger Ive had so far', 3, 5, '2021-04-28');
 
 -- 3)Get a review with any id, fx 1
 SELECT *
@@ -151,16 +145,15 @@ WHERE id = 2;
 
 -- Additional Queries
 -- Meal
-insert into Meal
-  (id, title, description, location, meal_time, max_reservations, price, created_date)
+insert into Meal ( title, description, location, when, max_reservations, price, created_date)
 values
-  (4, 'Nachos', 'Tex-mex nachos with beans', 'Kobenhavn k', '2021-04-29 12:00:00', 20, 120.27, '2021-04-29');
+  ( 'Nachos', 'Tex-mex nachos with beans', 'Kobenhavn k', '2021-04-29 12:00:00', 20, 120.27, '2021-04-29');
 
 
 -- Reservation
 insert into Reservation
-  (id, number_of_guests,meal_id,created_date)
-values(4, 12, 1, '2020-03-20');
+  ( number_of_guests, meal_id, created_date)
+values( 12, 1, '2020-03-21');
 
 
 -- Review
@@ -174,12 +167,12 @@ values
 
 -- QUERIES
 -- 1)Get meals that has a price smaller than a specific price fx 90
-SELECT *
-FROM meal
+SELECT meal.title, meal.price
+FROM Meal
 WHERE price < 90;
 
 -- 2)Get meals that still has available reservations
-SELECT (meal.max_reservations - reservation.number_of_guests), meal.title, meal.description
+SELECT (meal.max_reservations - reservation.number_of_guests) AS reservation_available, meal.title, meal.description
 FROM reservation
 INNER JOIN meal ON reservation.id=meal.id
 WHERE max_reservations - number_of_guests;
@@ -211,12 +204,12 @@ FROM reservation
   JOIN meal
   ON reservation.id=meal.id
   JOIN review 
-  ON reservation.id=review.meal_id
+  ON reservation.id=reservation.meal_id
 WHERE meal.id = 2
 ORDER BY review.created_date DESC;
 
 -- 8)Sort all meals by average number of stars in the reviews
-SELECT  avg(review.stars) 
+SELECT  meal.id, meal.title, meal.description, avg(review.stars) as average_review
 FROM meal 
   INNER JOIN review 
   ON meal.id = review.meal_id
