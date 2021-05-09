@@ -52,10 +52,10 @@ values
 -- Reservation
 insert into Reservation
   (number_of_guests, meal_id, created_date, contact_phonenumber, contact_name , contact_email)
-values( 2, 1, '2021-04-21', 43654009, Anna B, annab@gmail.com);
+values( 2, 1, '2021-04-21', 43654009, 'Anna B', 'annab@gmail.com');
 insert into Reservation
   ( number_of_guests,meal_id,created_date, contact_phonenumber, contact_name , contact_email)
-values( 4, 2, '2021-04-21', 32653425, Stephany E, stephanye@gmail.com);
+values( 4, 2, '2021-04-21', 32653425, 'Stephany E', 'stephanye@gmail.com');
 
 
 -- Review
@@ -162,9 +162,6 @@ insert into Review
 values
   ('Nachos review', 'Tasty!', 4, 5, '2021-04-28');
 
-
-
-
 -- QUERIES
 -- 1)Get meals that has a price smaller than a specific price fx 90
 SELECT meal.title, meal.price
@@ -179,7 +176,7 @@ WHERE max_reservations - number_of_guests;
 
 -- 3)Get meals that partially match a title.
 SELECT *
-FROM meal
+FROM Meal
 WHERE title LIKE '%Nacho%';
 
 -- 4)Get meals that has been created between two dates
@@ -193,10 +190,10 @@ FROM meal
 LIMIT 3;
 
 -- 6)Get the meals that have good reviews
-SELECT review.stars, meal.title
+SELECT review.stars, meal.title AS average_review
 FROM review
-INNER JOIN meal ON meal.id=review.meal_id
-WHERE stars > 3;
+INNER JOIN meal ON meal.id = review.meal_id
+WHERE review.stars > 3;
 
 -- 7)Get reservations for a specific meal sorted by created_date
 SELECT *
@@ -206,7 +203,7 @@ FROM reservation
   JOIN review 
   ON reservation.id=reservation.meal_id
 WHERE meal.id = 2
-ORDER BY review.created_date DESC;
+ORDER BY reservation.created_date DESC;
 
 -- 8)Sort all meals by average number of stars in the reviews
 SELECT  meal.id, meal.title, meal.description, avg(review.stars) as average_review
