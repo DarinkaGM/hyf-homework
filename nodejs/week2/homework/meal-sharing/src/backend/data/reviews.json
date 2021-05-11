@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "numberOfStars": 3,
+        "content": "Best meal ever",
+        "mealId": 1,
+        "createdAt": 12345
+    },
+    {
+        "id": 2,
+        "numberOfStars": 4,
+        "content": "Authentic Mexican food. Delicious!",
+        "mealId": 2,
+        "createdAt": 77733
+    },
+    {
+        "id": 3,
+        "numberOfStars": 4,
+        "content": "Great dinner for two",
+        "mealId": 3,
+        "createdAt": 11122
+    }
+]
