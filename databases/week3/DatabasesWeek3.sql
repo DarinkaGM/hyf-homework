@@ -17,11 +17,12 @@ CREATE TABLE `Meal` (
  `number_of_guests` int NOT NULL,
  `meal_id` int UNSIGNED NOT NULL,
  `created_date` DATETIME NOT NULL default NOW(),
- contact_phonenumber VARCHAR(255) NOT NULL,
- contact_name VARCHAR(255) NOT NULL,
- contact_email VARCHAR(255) UNIQUE NOT NULL,
- CONSTRAINT `fk_meal_reservation` FOREIGN KEY (`meal_id`) REFERENCES `Meal`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+ `contact_phonenumber` VARCHAR(255) NOT NULL,
+ `contact_name` VARCHAR(255) NOT NULL,
+ `contact_email`VARCHAR(255) UNIQUE NOT NULL,
+ FOREIGN KEY (`meal_id`) REFERENCES `Meal`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 
 CREATE TABLE `Review`
 (
@@ -33,19 +34,14 @@ CREATE TABLE `Review`
  `meal_id` int UNSIGNED NOT NULL,
  `stars` int NOT NULL,
  `created_date` DATETIME NOT NULL default NOW(),
- CONSTRAINT `fk_meal_review` FOREIGN KEY
-(`meal_id`) REFERENCES `Meal`
-(`id`) ON
-DELETE CASCADE ON
-UPDATE CASCADE
+ FOREIGN KEY (`meal_id`) REFERENCES `Meal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
  )  ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Meal
 SELECT *
 FROM Meal;
 insert into Meal (title, description, location, when, max_reservations, price, created_date)
-values
-  ('Tacos', 'Beef tacos', 'Mexican street 37', '2021-04-21  19:00:00', 10, 10.50, '2021-04-21'),
+values ('Tacos', 'Beef tacos', 'Mexican street 37', '2021-04-21  19:00:00', 10, 10.50, '2021-04-21'),
   ('Sushi', 'Salmon sushi', 'Strandvejen 70', '2021-04-19  18:30:00', 10, 40.75, '2021-04-19');
 
 
@@ -64,8 +60,7 @@ insert into Review
 values
   (1, 'Taco review', 'Best tacos in town!', 1, 5, '2021-04-22');
 insert into Review
-  (id, 
-  title, description, meal_id, stars,created_date)
+  (id, title, description, meal_id, stars,created_date)
 values
   (2, 'Sushi review', 'Ok. A bit pricy.', 2, 2, '2021-04-20');
 
@@ -76,9 +71,9 @@ FROM Meal;
 
 -- 2)Add a new meal
 insert into Meal
-  ( title, description, location, when, max_reservations, price, created_date)
+  (title, description, location, when, max_reservations, price, created_date)
 values
-  ( 'Hamburger', 'Veggie hamburger', 'Osterbrogade 54', '2025-24-04 20:29:13', 15, '15.50', '2025-24-04');
+  ('Hamburger', 'Veggie hamburger', 'Osterbrogade 54', '2025-24-04 20:29:13', 15, '15.50', '2025-24-04');
 
 -- 3)Get a meal with any id
 SELECT *
@@ -146,8 +141,8 @@ WHERE id = 2;
 -- Additional Queries
 -- Meal
 insert into Meal ( title, description, location, when, max_reservations, price, created_date)
-values
-  ( 'Nachos', 'Tex-mex nachos with beans', 'Kobenhavn k', '2021-04-29 12:00:00', 20, 120.27, '2021-04-29');
+values 
+( 'Nachos', 'Tex-mex nachos with beans', 'Kobenhavn k', '2021-04-29 12:00:00', 20, 120.27, '2021-04-29');
 
 
 -- Reservation
@@ -167,12 +162,18 @@ values
 SELECT meal.title, meal.price
 FROM Meal
 WHERE price < 90;
+SELECT COALESCE(SUM(reservation.number_of_guests), 0) AS total, meal.max_reservations, meal.title, meal.id
+FROM Meal
+LEFT JOIN reservation ON reservation.meal_id = meal.id
+GROUP BY meal.id HAVING max_reservations > total;
 
 -- 2)Get meals that still has available reservations
-SELECT (meal.max_reservations - reservation.number_of_guests) AS reservation_available, meal.title, meal.description
-FROM reservation
-INNER JOIN meal ON reservation.id=meal.id
-WHERE max_reservations - number_of_guests;
+SELECT Meal.*, (reservation.number_of_guests) AS total
+FROM Meal
+INNER JOIN reservation
+ON meal.id = reservation.meal_id
+GROUP BY meal.id
+HAVING total < max_reservations;
 
 -- 3)Get meals that partially match a title.
 SELECT *
@@ -196,12 +197,9 @@ INNER JOIN meal ON meal.id = review.meal_id
 WHERE review.stars > 3;
 
 -- 7)Get reservations for a specific meal sorted by created_date
-SELECT *
-FROM reservation 
-  JOIN meal
-  ON reservation.id=meal.id
-  JOIN review 
-  ON reservation.id=reservation.meal_id
+SELECT meal.title, reservation.created_date
+FROM meal 
+JOIN reservation ON meal.id= reservation.meal_id
 WHERE meal.id = 2
 ORDER BY reservation.created_date DESC;
 
