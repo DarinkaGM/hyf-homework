@@ -15,8 +15,7 @@ VALUES(
 '2021-04-16 22:35:00',
 '2021-04-16 22:35:00',
 '2021-04-28 12:00:00',
-2,
-3);
+2);
 
 -- 2) Change the title of a task
 
@@ -33,7 +32,7 @@ WHERE id = 1;
 -- 4) Change a task status
 
 UPDATE task
-SET status_id = '1'
+SET status_id = 1
 WHERE id = 1;
 
 -- 5) Mark a task as complete
@@ -51,30 +50,30 @@ WHERE id = 2;
  
  -- PART 2. 1) Create a new database containing the following tables: Class: with the columns: id, name, begins (date), ends (date) 
 CREATE DATABASE school;
+USE school;
 
 CREATE TABLE `Class` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) NOT NULL,
-  `begin_date` DATETIME NOT NULL,
-  `end_date` DATETIME NOT NULL
-);
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `begin_date` DATE NOT NULL,
+  `end_date` DATE NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 -- Student: with the columns: id, name, email, phone, class_id (foreign key)
 CREATE TABLE `Student` (
- `id` int(15) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone` varchar(255) NULL,
-  `class_id` int(10) unsigned NOT NULL,
- FOREIGN KEY (`class_id`) 
-);
+ `id` INT(15) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `phone` VARCHAR(255) NULL,
+  `class_id` INT(10) UNSIGNED NOT NULL,
+ CONSTRAINT `fk_class`FOREIGN KEY (`class_id`) REFERENCES `class`(`id`) ON UPDATE CASCADE
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
   -- Create an index on the name column of the student table.
-CREATE INDEX index_student
-ON STUDENT(id);
+CREATE INDEX index_student ON Student (`name`);
   
   -- Add a new column to the class table named status which can only have the following values: not-started, ongoing, finished.
   ALTER TABLE Class
-  ADD STATUS ENUM ('not-started','ongoing','finished');
+  ADD COLUMN `status` ENUM("not-started", "ongoing", "finished") NOT NULL;
 
 -- Part 3. 1)Get all the tasks assigned to users whose email ends in @spotify.com
 SELECT task.title AS user_tasks
