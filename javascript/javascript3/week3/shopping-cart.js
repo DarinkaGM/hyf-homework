@@ -1,5 +1,6 @@
 const productList = document.getElementById("products");
 const price = document.getElementById("price");
+
 class Product {
     constructor(name, price) {
         this.name = name;
@@ -51,6 +52,7 @@ class ShoppingCart {
             })
     }
 }
+
 const shoppingCart = new ShoppingCart();
 const book = new Product('Book', 50);
 const handCream = new Product('Hand cream', 80);
@@ -64,3 +66,20 @@ console.log(shoppingCart);
 shoppingCart.getUser();
 const purchase = shoppingCart.renderProducts()
 shoppingCart.getTotal();
+
+let productList = [
+    new product("Lipstick", 120),
+    new product("foundation", 200),
+    new product("nail polish", 70),
+    new product("purse", 300),
+    new product("handbag", 1000),
+    new product("backpack", 1200),
+];
+
+const addButton = document.getElementById("add-bttn");
+addButton.addEventListener("click", () => {
+    const product = productList.find(product => {
+        return product.name;
+    })
+    shoppingCart.addProduct(product);
+});
