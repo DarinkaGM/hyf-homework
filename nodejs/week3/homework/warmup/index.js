@@ -9,7 +9,7 @@ app.get("/", (req, res) => res.send("nodejs week3 homework"));
 
 app.get("/calculator/:method", (req, res) => {
     if (req.params.method === "add") {
-      let sumResult = addition(req);
+      const sumResult = addition(req);
       res.send(sumResult);
     } else if (req.params.method === "subtract") {
       const substraction = subtract(req);
@@ -32,36 +32,28 @@ app.get("/calculator/:method", (req, res) => {
       res.send(division);
     }});
   
-  function divide(req) {
-    let product = 1;
-    for (var param in req.query) {
-      product = Number(req.query[param]) / product;
-    }
-    return product;
+  function divide (req, res) {
+      let values = Object.values(req.body).flat().map(n=> Number(n))
+      let product = values.reduce((a,b) => a / b)
+      res.send(`${product}`)
   }
   
-  function multiply(req) {
-    let product = 1;
-    for (var param in req.query) {
-        product = Number(req.query[param]) * product;
-      }
-    
-    return product;
+  function multiply(req,res) {
+    let values = Object.values(req.body).flat().map(n=> Number(n))
+    let product = values.reduce((a,b) => a * b)
+    res.send(`${product}`)
   }
   
-  function subtract(req) {
-    let difference = 0;
-    for (var param in req.query) {
-      difference = Number(req.query[param]) - difference;
-      }  return difference;
+  function subtract(req, res) {
+    let values = Object.values(req.body).flat().map(n=> Number(n))
+    let difference = values.reduce((a,b) => a - b)
+    res.send(`${difference}`)
   }
   
-  function addition(req) {
-    let sum = 0;
-    for (var param in req.query) {
-       sum = sum + Number(req.query[param]);
-      }
-    return sum;
+  function addition(req, res) {
+    let values = Object.values(req.body).flat().map(n=> Number(n))
+    let sum = values.reduce((a,b) => a + b)
+    res.send(`${sum}`)
   }
 
 app.listen(3000, () => console.log(`Calculator:listening on port 3000`));
