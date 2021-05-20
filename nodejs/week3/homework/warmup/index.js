@@ -10,7 +10,7 @@ app.get("/", (req, res) => res.send("nodejs week3 homework"));
 app.get("/calculator/:method", (req, res) => {
     if (req.params.method === "add") {
       let sumResult = addition(req);
-      res.send(sumResult);
+      res.send(`${sumResult}`);
     } else if (req.params.method === "subtract") {
       const substraction = subtract(req);
       res.send( substraction);
