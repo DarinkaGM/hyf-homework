@@ -23,14 +23,18 @@ app.get("/calculator/:method", (req, res) => {
     }
   });
   
-  app.post("/calculator", (req, res) => {
-     if (req.body.method === "multiply") {
-      const multiplication = multiply(req);
-      res.send(multiplication);
-    } else if (req.body.method === "divide") {
-      const division = divide(req);
-      res.send(division);
-    }});
+app.post("/calculator/:method", (req, res) => {
+  const numbers = Object.values(req.body)
+    .flat()
+    .map((number) => Number(number));
+  if (req.params.method === "multiply") {
+    const multiplication = numbers.reduce((acc, value) => acc * value);
+    res.send({ multiplication });
+  } else if (req.params.method === "divide") {
+    const division = numbers.reduce((acc, value) => acc / value);
+    res.send({ division });
+  }
+});
   
   function divide(req) {
     let product = 1;
