@@ -18,8 +18,13 @@ class ToDoList extends Component {
     this.deleteToDo = this.deleteToDo.bind(this);
   }
   addToDo() {
-    const newList = [...this.state.toDoList, {id: Math.floor(Math.random() * 100000) + Date.now(),
-      description: "toDo",}];
+    const newList = [
+      ...this.state.toDoList,
+      {
+        id: Math.floor(Math.random() * 100000) + Date.now(),
+        description: "toDo",
+      },
+    ];
     this.setState({ toDoList: newList });
   }
 
@@ -33,23 +38,20 @@ class ToDoList extends Component {
   render() {
     const { toDoList } = this.state;
     const rows = this.state.toDoList.map((todo) => (
-      <ToDoItems
-        toDo={todo}
-        key={todo.id}
-        deleteItem={this.deleteToDo}
-      />
+      <ToDoItems toDo={todo} key={todo.id} deleteItem={this.deleteToDo} />
     ));
     if (rows.length > 0) {
       return (
         <>
-        <ul>{rows}</ul>
+          <ul>{rows}</ul>
           <button className="add-button" onClick={this.addToDo}>
             Add
           </button>
         </>
       );
-    } 
+    }
   }
 }
 
 export default ToDoList;
+
