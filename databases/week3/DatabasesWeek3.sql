@@ -191,7 +191,7 @@ FROM meal
 LIMIT 3;
 
 -- 6)Get the meals that have good reviews
-SELECT review.stars, meal.title AS average_review
+SELECT meal.title, AVG(review.stars) AS average_review
 FROM review
 INNER JOIN meal ON meal.id = review.meal_id
 WHERE review.stars > 3;
