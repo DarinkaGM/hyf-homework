@@ -18,11 +18,8 @@ class ToDoList extends Component {
     this.deleteToDo = this.deleteToDo.bind(this);
   }
   addToDo() {
-    const newList = this.state.toDoList;
-    newList.push({
-      id: Math.floor(Math.random() * 100),
-      description: "toDo",
-    });
+    const newList = [...this.state.toDoList, {id: Math.floor(Math.random() * 100000) + Date.now(),
+      description: "toDo",}];
     this.setState({ toDoList: newList });
   }
 

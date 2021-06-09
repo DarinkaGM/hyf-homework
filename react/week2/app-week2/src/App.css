@@ -33,6 +33,9 @@ ul {
   border-width: thin;
   border-color: mediumspringgreen;
 }
+.checkbox:checked + .todo{
+  text-decoration: line-through;
+}
 
 .add-button{
   display: inline-block;
