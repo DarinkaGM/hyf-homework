@@ -35,13 +35,15 @@ class toDoList extends Component {
     );
     this.setState({ toDoList: updatedList });
   }
-  addTask(taskDescription, taskDeadline) {
-    const newList = this.state.toDoList;
-    newList.push({
-      id: Math.floor(Math.random() * 100),
-      description: taskDescription,
-      deadline: taskDeadline,
-    });
+
+  addTask (taskDescription, taskDeadline) {
+    const newList = [...this.state.toDoList,
+      {
+        id: Math.floor(Math.random() * 10000),
+        description: taskDescription,
+        deadline: taskDeadline,
+      },
+    ];
     this.setState({ toDoList: newList });
   }
   submitHandler(event) {
