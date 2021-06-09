@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.Timer {
+  margin-top: 10%;
+}
+
+h2 {
+  margin-top: 20%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+
+.App-header {
+  font-size: calc(10px + 2vmin);
+  color: rgb(68, 68, 68);
+}
+
+.checklist{
+  padding-top: 5%;
+  list-style-type: none;
+  text-align: left;
+}
+ul { 
+  border-style: solid;
+  border-radius: 20px;
+  border-width: thin;
+  border-color: mediumspringgreen;
+}
+
+.add-button{
+  display: inline-block;
+  border: none;
+  padding: .5rem 1rem;
+  margin: 0;
+  text-decoration: none;
+  background: #31c090;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, 
+              transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+
+.add-button:hover,
+.add-button:focus {
+    background: #45a575;
+}
+
+.add-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.add-button:active {
+    transform: scale(0.99);
+}
+
+.button{
+  background-color: transparent;
+  border: none;
+text-decoration: underline;
+  color: red;
+  cursor: auto;
+}
+.button:hover{
+  color: white;
+  background-color: red;
+}
+
+.counterText {
+  color: #45a575;
+}
