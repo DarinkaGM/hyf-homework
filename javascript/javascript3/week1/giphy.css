@@ -1,0 +1,64 @@
+
+html {
+    height: 100%;
+    overflow: scroll;
+  }
+body {
+    height: 100%;
+    background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/255/623/small/colorful-terrazzo-seamless-texture.jpg);
+    font-family: 'Abril Fatface', cursive;  }
+h1 {
+    font-size: 35px;
+    color: rgb(75, 55, 39);
+    display: block;
+    text-shadow: 2px 2px lightcoral;
+}
+p{ color: rgb(21, 199, 110);}
+
+#search-container {
+    background-color: rgba(236, 235, 222, 0.938);
+    display: block;
+    text-align: center;
+    margin: 5%;
+    padding: 30px;
+}
+
+input {
+    background-color: rgba(24, 117, 145, 0.747);
+    color: whitesmoke;
+    margin: 10px;
+    border: none;
+    height :30px;
+    width: 40%;
+    font-size: larger;
+    font-weight: lighter;
+    text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+::placeholder {
+    color: rgb(216, 212, 212);
+  }
+
+button {
+    font-family: 'Abril Fatface', cursive;
+    text-shadow: 1px 1px chocolate;
+    box-shadow: 3px 3px turquoise;
+    margin: 10px;
+    font-size: larger;
+    font-weight: lighter;
+    border: none;
+    -webkit-appearance: none;
+    color: white;
+    background-color: rgb(197, 190, 128);
+    width: 40%;
+    height :40px;
+  }
+  ul{
+      list-style: none;
+  }

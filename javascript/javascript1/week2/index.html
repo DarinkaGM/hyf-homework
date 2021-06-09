@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HYF-Bay</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+            <nav>
+                <a href=""><h1><i class="fa fa-shopping-cart" style="font-size:24px"> </i> HYF-Bay</h1></a>
+                <ul class="nav-ul">
+                    <li class="nav-li"><a href="#Home">HOME</a></li>
+                    <li class="nav-li"><a href="#myAccount">MY ACCOUNT</a></li>
+                    <li class="nav-li"><a href="#contact">CONTACT</a></li>
+                </ul>
+               </div> 
+            </nav>
+        </header>
+        <section class="table-view-control">
+            <div>
+                <label>What are you looking for?</label>
+                <input type="text" placeholder="Item" class="search-input">
+            </div>
+            <div id="sort-by">
+                <label>Sort by:</label>
+                <select>
+                    <option value="name">Name</option>
+                    <option value="cheap">Cheap first</option>
+                    <option value="expensive">Expensive first</option>
+                </select>
+
+            </div>
+            <div>
+                <label>
+                    Price:
+                </label>
+                <input type="text" class="max-price" placeholder="Max price">
+
+            </div>
+            <div class="filters">
+                <div class="country">
+                    <label>Ships to:</label>
+                    <select>
+                        <option value="denmark">Denmark &#127465;&#127472;</option>
+                        <option value="sweden">Sweden &#127480;&#127466;</option>
+                        <option value="norway">Norway &#127475;&#127476;</option>
+                        <option value="germany">Germany &#127465;&#127466;</option>
+                        <option value="iceland">Iceland &#127470;&#127480;</option>
+                        <option value="england">England &#127988;&#917607;&#917602;&#917605;&#917614;&#917607;&#917631;</option>
+                    </select>
+                </div>  
+                
+            </div>
+        </section>
+        <section class="products">
+            <ul></ul>
+        </section>
+        <section class="cart">
+            <h2>Your shopping cart</h2>
+            <div class="total">
+                <h3>Total:<span></span></h3>
+            </div>
+            <ul></ul>
+        </section>
+    </main>
+    <script src="hyfBayHelpers.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

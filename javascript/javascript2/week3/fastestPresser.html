@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FASTEST PRESSER!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fastestPresser.css">
+</head>
+<body><main>
+    <h1>FASTEST PRESSER!</h1>
+    
+        <div class="settings">
+            <input type="number" id="set-seconds-input" placeholder="Set seconds">
+
+        
+            <button id="start-bttn">START!</button>
+        </div>
+    
+    <section class="game-section">
+        <div id="player-one">
+            <h4>PRESS 'S'</h4>
+            <h3 id="s-count"></h3>
+            <h2></h2>
+            <canvas class="canvas-one">
+            </canvas>
+        </div>
+        <div id="player-two">
+            <h4>PRESS 'L'</h4>
+            <h3 id="l-count"></h3>
+            <h2></h2>
+            <canvas class="canvas-two">
+            </canvas>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+    <script src="fastestPresser.js"></script>
+</main>
+</body>
+</html>
