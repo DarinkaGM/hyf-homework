@@ -11,7 +11,7 @@ function FetchUsers() {
       .then((data) => fetchData(data.items))
   }, [users]);
   
-  return displayData.map((user) => <h3>{user.login}</h3>);
+  return displayData.map((users) => <h3>{users.login}</h3>);
 }
 
 export default FetchUsers;
