@@ -1,5 +1,7 @@
 Tomato
 Lettuce
-Carrot
+Broccoli
 Pepper
 Onion
+Cabbage
+Kale
