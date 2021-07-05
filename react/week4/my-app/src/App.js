@@ -4,9 +4,9 @@ import FetchUsers from "./FetchUsers";
 import Context from "./Context";
 
 function App({setUsers}) {
-  const [user, inputData] = useState("");
+  const [userInput, setUserInput] = useState("");
   const updateData = (e) => {
-    inputData(e.target.value);
+    setUserInput(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +14,14 @@ function App({setUsers}) {
   return (
     <div className="github-searcher">
       <h1>Github user searcher</h1>
-      <Context.Provider value={user}>
+      <Context.Provider value={userInput}>
       <>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           setUsers={setUsers} 
           onChange={updateData}
-        ></input>
+        />
       </form>
     </>
       <FetchUsers />

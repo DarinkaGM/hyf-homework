@@ -10,6 +10,11 @@ function FetchUsers() {
       .then((res) => res.json())
       .then((data) => fetchData(data.items))
   }, [users]);
+  if (!users) {
+    return "Input error";
+  }
+  if (!displayData) return "Error";
+  if (displayData.length === 0) return "No users found";
   
   return displayData.map((users) => <h3>{users.login}</h3>);
 }
